@@ -67,7 +67,9 @@ module.exports = (_, argv) => ({
       remotes: {
         'container':"container@http://localhost:3001/remoteEntry.js"
       },
-      exposes: {},
+      exposes: {
+          './header':"./src/header.js",
+        },
       shared: {
         ...deps,
         react: {

@@ -8,11 +8,10 @@ const deps = require("./package.json").dependencies;
 const printCompilationMessage = require('./compilation.config.js');
 
 module.exports = (_, argv) => ({
-  output: {
-    publicPath: "http://localhost:3002/",
-    path: path.resolve(__dirname, 'public'),
-  },
-
+    output: {
+      publicPath: "auto", // Dynamic base URL
+      path: path.resolve(__dirname, 'dist'),
+    },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
@@ -70,7 +69,6 @@ module.exports = (_, argv) => ({
       },
       exposes: {
           './header':"./src/header.js",
-          './styles': './src/index.scss',
         },
       shared: {
         ...deps,

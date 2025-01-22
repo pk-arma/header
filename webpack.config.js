@@ -70,7 +70,7 @@ module.exports = (_, argv) => ({
       },
       exposes: {
           './header':"./src/header.js",
-          './styles': './src/index.css',
+          './styles': './src/index.scss',
         },
       shared: {
         ...deps,
